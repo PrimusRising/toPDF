@@ -2,7 +2,6 @@
 # The produced PDF files are stored in the invocation folder
 #
 # Adapted from http://stackoverflow.com/questions/16534292/basic-powershell-batch-convert-word-docx-to-pdf
-# By Jesper van Emden
 #
 # If PowerShell exits with an error, check if unsigned scripts are allowed in your system.
 # You can allow them by calling PowerShell as an Administrator and typing
@@ -52,7 +51,7 @@ Get-ChildItem -Path $curr_path -Filter *.doc? | ForEach-Object {
 $word_app.Quit()
 [System.Runtime.Interopservices.Marshal]::ReleaseComObject($word_app)
 
-#Exel to PDF works but doens't release comobject :(
+#Exel to PDF works 
 $xlFixedFormat = “Microsoft.Office.Interop.Excel.xlFixedFormatType” -as [type]
 $objExcel = New-Object -ComObject excel.application
 $objExcel.visible = $False
